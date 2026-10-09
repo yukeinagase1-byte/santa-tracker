@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071526">
+<link rel="manifest" href="manifest.json">
+<meta name="description" content="Santa Tracker — Mission Control, a festive simulated tracker.">
+<title>Santa Tracker — Mission Control</title>
+<style>
+:root{color-scheme:dark;--bg:#06111f;--panel:#0d2034;--panel2:#102942;--line:#24445e;--ice:#9edcff;--gold:#ffd477;--green:#70e2ad;--muted:#9bb5c9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#153452 0,#06111f 58%);color:#eef7ff;font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select{font:inherit}.wrap{max-width:1000px;margin:auto;padding:16px 14px 34px}.top{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:8px 0 16px}.logo{width:48px;height:48px;border-radius:14px;background:linear-gradient(145deg,#163b58,#091929);display:grid;place-items:center;font-size:27px;border:1px solid #315b78}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--ice);font-weight:800}.title{font-size:clamp(21px,4vw,32px);font-weight:900;letter-spacing:.3px;margin:2px 0}.sub{color:var(--muted);font-size:12px}.pill{margin-left:auto;border:1px solid #29694f;color:var(--green);background:#0b3028;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800;white-space:nowrap}.alert{margin:14px 0;padding:10px 12px;border-radius:10px;border:1px solid #7a5b23;background:#302611;color:#ffe2a0;font-size:12px}.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:12px}.panel{background:linear-gradient(145deg,rgba(15,39,61,.98),rgba(8,25,42,.98));border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #0003}.panelhead{padding:13px 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panelhead h2{margin:0;font-size:13px;letter-spacing:1.4px}.micro{font-size:10px;color:var(--muted);letter-spacing:1px}.map{position:relative;min-height:340px;background-color:#091a2a;background-image:linear-gradient(#1d3b512b 1px,transparent 1px),linear-gradient(90deg,#1d3b512b 1px,transparent 1px),radial-gradient(ellipse at 50% 48%,#12314a 0,#081a2a 72%);background-size:28px 28px,28px 28px,auto;overflow:hidden}.map svg{width:100%;height:340px;display:block}.mapcaption{position:absolute;left:12px;bottom:12px;background:#06111fe8;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:11px;color:var(--ice)}.maptag{position:absolute;right:12px;top:12px;border:1px solid #315a75;background:#071827e8;border-radius:7px;padding:7px 9px;font-size:10px;letter-spacing:1px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.stat{background:#091b2b;border:1px solid #1b3b53;border-radius:12px;padding:12px}.statlabel{font-size:10px;letter-spacing:1.1px;color:var(--muted);font-weight:800}.statvalue{font-size:21px;font-weight:900;margin:5px 0 1px;color:#fff;overflow-wrap:anywhere}.statnote{font-size:11px;color:var(--muted)}.gold{color:var(--gold)}.green{color:var(--green)}.mission{padding:15px}.missionrow{display:flex;gap:10px;align-items:flex-start;margin:10px 0}.dot{width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:6px;box-shadow:0 0 12px #ffd47766;flex-shrink:0}.mission strong{display:block}.mission small{color:var(--muted)}.controls{padding:14px;border-top:1px solid var(--line);display:grid;gap:10px}.controls label{font-size:11px;color:var(--muted);letter-spacing:.6px;font-weight:800}.controls select,.controls input{width:100%;background:#071827;color:#eef7ff;border:1px solid #31516a;border-radius:9px;padding:10px}.btnrow{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #315c79;background:#12324b;color:#eef7ff;padding:10px 12px;border-radius:9px;font-weight:800;cursor:pointer}.btn.primary{background:#d8a947;border-color:#ffda7e;color:#13202a}.btn:active{transform:translateY(1px)}.foot{margin-top:14px;color:var(--muted);font-size:11px;text-align:center}.official{display:inline-block;color:var(--ice);text-decoration:none;border-bottom:1px dotted var(--ice)}.hidden{display:none!important}.musicbox{margin:12px 0 0;padding:13px 15px;border:1px solid #31516a;border-radius:12px;background:#091b2b;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.musicbox .musictext{flex:1;min-width:170px}.musicbox strong{display:block}.musicbox small{color:var(--muted)}.musicstatus{font-size:11px;color:var(--green)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.map{min-height:290px}.map svg{height:290px}.pill{font-size:9px;padding:5px 7px}.title{font-size:22px}.wrap{padding:12px 10px 26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">🎅</div>
+    <div>
+      <div class="eyebrow">GLOBAL TRACKING NETWORK</div>
+      <div class="title">SANTA // MISSION CONTROL</div>
+      <div class="sub">North Pole Operations • Christmas Flight Desk</div>
+    </div>
+    <div class="pill">● SYSTEM ONLINE</div>
+  </header>
+  <div class="alert">SIMULATION MODE — Map position, mission status, and delivery count are sample data, not verified live GPS. Official tracking is linked below.</div>
+<section class="musicbox" aria-label="Christmas music controls"><div style="font-size:28px">🎶</div><div class="musictext"><strong>Christmas Control-Room Jingles</strong><small>An original looping festive chime melody made with synthesized tones — not a commercial song.</small><div class="musicstatus" id="musicStatus">Music is off</div></div><button class="btn primary" id="musicToggle" type="button">▶ Play music</button><button class="btn" id="musicStop" type="button">■ Stop</button></section>
+  <main class="grid">
+    <section class="panel">
+      <div class="panelhead"><h2>01 / GLOBAL TRACKING MAP</h2><span class="micro" id="mapMode">SIMULATED FEED</span></div>
+      <div class="map">
+        <div class="maptag">● TRACK SIGNAL: DEMO</div>
+        <svg viewBox="0 0 600 340" role="img" aria-label="Stylized world map with a simulated Santa location">
+          <defs><pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#3c6c87" opacity=".4"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <rect width="600" height="340" fill="url(#dots)" opacity=".7"/>
+          <g fill="#153650" stroke="#2c5873" stroke-width="1.2" opacity=".95">
+            <path d="M40 74 L65 51 99 48 123 62 144 59 158 79 145 97 123 103 115 126 92 135 84 159 63 151 56 124 37 108Z"/>
+            <path d="M126 164 L151 170 167 195 158 223 172 250 158 286 144 265 139 233 122 208 117 184Z"/>
+            <path d="M238 70 L265 57 295 64 312 81 338 75 355 89 383 83 405 99 431 89 460 100 484 91 518 110 540 130 523 149 493 144 479 163 452 159 436 181 410 174 391 151 366 145 348 125 323 133 302 114 282 119 263 101 241 99Z"/>
+            <path d="M274 137 L302 130 328 148 334 174 319 195 307 224 289 252 275 235 269 206 254 182 259 156Z"/>
+            <path d="M462 224 L487 211 518 222 531 244 513 265 486 271 468 251Z"/>
+            <path d="M535 164 L550 158 561 171 551 184 538 179Z"/>
+          </g>
+          <path id="route" d="M300 40 Q360 10 430 75 T505 145" fill="none" stroke="#ffd477" stroke-width="2" stroke-dasharray="5 7" opacity=".8"/>
+          <circle cx="300" cy="40" r="13" fill="#ffd477" opacity=".13" filter="url(#glow)"/>
+          <circle cx="300" cy="40" r="5" fill="#ffd477" stroke="#fff0c2" stroke-width="2"/>
+          <text x="315" y="35" fill="#ffe4a0" font-size="12" font-weight="800" id="mapLabel">NORTH POLE</text>
+          <text x="20" y="320" fill="#83abc5" font-size="10" letter-spacing="1.5">CARTOGRAPHIC DISPLAY • NOT TO NAVIGATIONAL SCALE</text>
+        </svg>
+        <div class="mapcaption" id="locationCaption">📍 NORTH POLE · PREPARING</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="statlabel">MISSION STATUS</div><div class="statvalue gold" id="missionValue">PREPARING</div><div class="statnote">Simulated status</div></div>
+        <div class="stat"><div class="statlabel">LETTERS DELIVERED</div><div class="statvalue" id="lettersValue">5,566,677,888</div><div class="statnote">Demo counter</div></div>
+        <div class="stat"><div class="statlabel">CHRISTMAS COUNTDOWN</div><div class="statvalue gold" id="countdown">--d --h --m</div><div class="statnote">Until Dec 25, 00:00 (device time)</div></div>
+        <div class="stat"><div class="statlabel">REINDEER FLIGHT TEAM</div><div class="statvalue green">8 + Rudolph</div><div class="statnote">All reindeer accounted for (fictional)</div></div>
+      </div>
+    </section>
+    <aside class="panel">
+      <div class="panelhead"><h2>02 / MISSION TELEMETRY</h2><span class="micro">DEMO DATA</span></div>
+      <div class="mission">
+        <div class="missionrow"><span class="dot"></span><div><strong id="missionTitle">Workshop preparations</strong><small id="missionDesc">Santa is preparing at the North Pole.</small></div></div>
+        <div class="missionrow"><span class="dot" style="background:#70e2ad"></span><div><strong>Reindeer readiness</strong><small>Harness check and flight briefing complete — simulated.</small></div></div>
+        <div class="missionrow"><span class="dot" style="background:#9edcff"></span><div><strong>Tracking signal</strong><small>Local prototype active. No GPS connection.</small></div></div>
+      </div>
+      <div class="panelhead"><h2>03 / CONTROL CONSOLE</h2></div>
+      <div class="controls">
+        <div><label for="location">SIMULATED LOCATION</label><select id="location"><option>North Pole</option><option>Testing the sleigh</option><option>Flying around the world</option><option>Delivering presents</option><option>Mission complete</option></select></div>
+        <div><label for="mission">MISSION STATUS</label><select id="mission"><option value="preparing">Preparing</option><option value="ready">Ready for departure</option><option value="airborne">Delivery mission</option><option value="complete">Mission complete</option></select></div>
+        <div><label for="letters">LETTERS DELIVERED (SIMULATED)</label><input id="letters" type="number" inputmode="numeric" min="0" value="5566677888"></div>
+        <div class="btnrow"><button class="btn primary" id="update">Apply update</button><button class="btn" id="reset">Reset demo</button></div>
+        <div><label>OFFICIAL SEASONAL TRACKING</label><p class="sub">When available, check NORAD's official seasonal tracker. This prototype does not import its live data.</p><a class="official" href="https://www.noradsanta.org/" target="_blank" rel="noopener">Open NORAD Tracks Santa ↗</a></div>
+      </div>
+    </aside>
+  </main>
+  <footer class="foot">SANTA TRACKER • MISSION CONTROL • Simulated values are not real-world tracking.<br><span id="installHint">For install mode, host this folder on an HTTPS website, then use your browser menu to install/add it to your home screen.</span></footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const defaults={location:"North Pole",mission:"preparing",letters:"5566677888"};
+const descriptions={
+ preparing:["PREPARING","Workshop preparations","Santa is preparing at the North Pole."],
+ ready:["READY","Pre-flight checklist","The sleigh and reindeer are getting ready — simulated."],
+ airborne:["AIRBORNE","Delivery mission underway","A fictional Christmas route is active in this demo."],
+ complete:["COMPLETE","Mission complete","The simulated delivery mission has finished."]
+};
+function apply(){
+ const loc=$("location").value, m=$("mission").value;
+ const raw=Math.max(0,Number($("letters").value)||0);
+ const [short,title,desc]=descriptions[m];
+ $("missionValue").textContent=short;
+ $("missionTitle").textContent=title;
+ $("missionDesc").textContent=desc;
+ $("lettersValue").textContent=raw.toLocaleString("en-US");
+ $("locationCaption").textContent="📍 "+loc.toUpperCase()+" · "+short;
+ $("mapLabel").textContent=loc.toUpperCase();
+ const positions={"North Pole":[300,40],"Testing the sleigh":[345,75],"Flying around the world":[430,130],"Delivering presents":[490,175],"Mission complete":[300,40]};
+ const [x,y]=positions[loc]||positions["North Pole"];
+ const dot=document.querySelector("svg circle:last-of-type");
+ // Move the marker and label to represent the selected simulated location.
+ const circles=document.querySelectorAll("svg circle");
+ circles[circles.length-1].setAttribute("cx",x); circles[circles.length-1].setAttribute("cy",y);
+ const glow=circles[circles.length-2]; glow.setAttribute("cx",x); glow.setAttribute("cy",y);
+ $("mapLabel").setAttribute("x",Math.min(x+15,480)); $("mapLabel").setAttribute("y",y-8);
+}
+$("update").addEventListener("click",apply);
+$("reset").addEventListener("click",()=>{$("location").value=defaults.location;$("mission").value=defaults.mission;$("letters").value=defaults.letters;apply();});
+function tick(){
+ const now=new Date(), target=new Date(now.getFullYear(),11,25,0,0,0);
+ if(now>=target) target.setFullYear(target.getFullYear()+1);
+ let ms=target-now, days=Math.floor(ms/86400000);ms%=86400000;
+ const hours=Math.floor(ms/3600000);ms%=3600000;
+ const minutes=Math.floor(ms/60000);
+ $("countdown").textContent=`${days}d ${hours}h ${minutes}m`;
+}
+apply();tick();setInterval(tick,30000);
+
+// Original synthesized Christmas-style chime melody. Browsers require a tap before audio starts.
+let audioCtx=null, musicTimer=null, noteIndex=0, musicPlaying=false;
+const melody=[
+  [659,0.22],[784,0.22],[988,0.38],[784,0.22],[659,0.22],[523,0.38],
+  [587,0.22],[698,0.22],[880,0.38],[698,0.22],[587,0.22],[494,0.38],
+  [523,0.22],[659,0.22],[784,0.22],[1047,0.42],[988,0.22],[784,0.42]
+];
+function chime(freq,duration){
+  if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  const now=audioCtx.currentTime, osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+  osc.type="sine"; osc.frequency.setValueAtTime(freq,now);
+  gain.gain.setValueAtTime(0.0001,now);
+  gain.gain.exponentialRampToValueAtTime(0.11,now+0.025);
+  gain.gain.exponentialRampToValueAtTime(0.0001,now+duration);
+  osc.connect(gain); gain.connect(audioCtx.destination); osc.start(now); osc.stop(now+duration+0.03);
+}
+function musicStep(){
+  if(!musicPlaying)return;
+  const [freq,duration]=melody[noteIndex%melody.length];
+  chime(freq,duration);
+  noteIndex++;
+  musicTimer=setTimeout(musicStep,Math.max(170,duration*1000+80));
+}
+$("musicToggle").addEventListener("click",async()=>{
+  if(!musicPlaying){
+    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state==="suspended") await audioCtx.resume();
+    musicPlaying=true;$("musicToggle").textContent="Ⅱ Pause music";$("musicStatus").textContent="♪ Playing original festive chimes";musicStep();
+  }else{
+    musicPlaying=false;clearTimeout(musicTimer);$("musicToggle").textContent="▶ Play music";$("musicStatus").textContent="Music paused";
+  }
+});
+$("musicStop").addEventListener("click",()=>{
+  musicPlaying=false;clearTimeout(musicTimer);$("musicToggle").textContent="▶ Play music";$("musicStatus").textContent="Music is off";noteIndex=0;
+});
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
+
+</script>
+</body>
+</html>
